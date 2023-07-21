@@ -25,8 +25,7 @@ export class RecipePage implements OnInit {
     }
 
     filterItems(e:Recipe[]){
-        debugger
-        this.foodList=e;
+        this.foodList = e;
         console.log("this.foodList :",this.foodList);
     }
 }
