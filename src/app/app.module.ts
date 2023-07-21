@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { RecipeModule } from './recipes/recipes.module';
 import { AppRoutingModule } from './app.routes';
-import { CollectionModule } from './collection/collection.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { CollectionModule } from './modules/collection/collection.module';
+import { RecipeModule } from './modules/recipes/recipes.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     CommonModule,
-    RecipeModule,
     AppRoutingModule,
     CollectionModule,
+    RecipeModule,
     BrowserAnimationsModule
   ],
   providers: [],

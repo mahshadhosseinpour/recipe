@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CardDirective } from '../../directive/card.directive';
-import { ReceipeService } from '../../services/recipe.service';
-import { Recipe } from '../../models/recipe.model';
-import { LocalStorageService } from '../../services/storage.service';
+import { Component } from '@angular/core';
+import { CardDirective } from 'src/app/modules/recipes/directive/card.directive';
+import { Recipe } from 'src/app/modules/recipes/models/recipe.model';
+import { ReceipeService } from 'src/app/modules/recipes/services/recipe.service';
+import { LocalStorageService } from 'src/app/modules/recipes/services/storage.service';
+ 
  
 
 @Component({

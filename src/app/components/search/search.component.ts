@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { Recipe } from '../../models/recipe.model';
-import { ReceipeService } from '../../services/recipe.service';
+import { Recipe } from 'src/app/modules/recipes/models/recipe.model';
+import { ReceipeService } from 'src/app/modules/recipes/services/recipe.service';
+ 
 
 @Component({
     selector: 'hp-search',

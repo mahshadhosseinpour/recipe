@@ -1,8 +1,8 @@
 import { Routes } from "@angular/router";
 import { NgModule } from '@angular/core';
-import { RecipePage } from "./recipes/pages/recipe.page";
 import { RouterModule } from "@angular/router";
-import { CollectionPage } from "./collection/pages/collection.page";
+import { RecipePage } from "./modules/recipes/pages/recipe.page";
+import { CollectionPage } from "./modules/collection/pages/collection.page";
 
 const routes: Routes = [
     {

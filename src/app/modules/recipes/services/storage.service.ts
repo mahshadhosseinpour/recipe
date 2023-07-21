@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
-import { Observable, of } from 'rxjs';
 import { ReceipeService } from './recipe.service';
 
 @Injectable({ providedIn: 'root' })

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RecipePage } from './pages/recipe.page';
 import { ReceipeService } from './services/recipe.service';
-import { SearchComponent } from './components/search/search.component';
-import { CardComponent } from './components/card/card.component';
+ 
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from 'src/app/components/search/search.component';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 
 const components:any[]=[
