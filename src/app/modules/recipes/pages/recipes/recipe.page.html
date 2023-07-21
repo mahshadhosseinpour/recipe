@@ -21,4 +21,7 @@
         </div>
     </div>
 </div>
- 
+
+<hp-loading *ngIf="isLoading"></hp-loading>
+
+<hp-toast *ngIf="isError"  type="error" message="This is an error message."></hp-toast>

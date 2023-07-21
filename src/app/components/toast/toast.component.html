@@ -1,0 +1,7 @@
+<div [ngClass]="{
+    'bg-red-500': type === 'error',
+    'bg-yellow-500': type === 'warning',
+    'bg-green-500': type === 'success',
+  }" class="fixed p-4 text-white rounded shadow-md bottom-5 left-5">
+    <p>{{ message }}</p>
+  </div>

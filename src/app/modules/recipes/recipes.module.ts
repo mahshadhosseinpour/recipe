@@ -9,12 +9,14 @@ import { CardComponent } from 'src/app/components/card/card.component';
 import { RecipesRoutingModule } from './receipe.routes';
 import { MyRecipePage } from './pages/my-recipes/my-recipes.page';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
+import { ToastComponent } from 'src/app/components/toast/toast.component';
 
 
 const components:any[]=[
     SearchComponent,
     CardComponent,
-    LoadingComponent
+    LoadingComponent,
+    ToastComponent
 ]
 
 const pages :any[]=[

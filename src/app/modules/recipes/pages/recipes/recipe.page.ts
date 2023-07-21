@@ -15,6 +15,7 @@ export class RecipePage implements OnInit {
 
     foodList: Recipe[];
     isLoading: boolean = true;
+    isError: boolean = false;
 
     ngOnInit() {
         this.recipeService.getRecipes().subscribe({
@@ -22,6 +23,10 @@ export class RecipePage implements OnInit {
                 this.foodList = res;
             },
             error: (er) => {
+                this.isError=true;
+                setTimeout(() => {
+                    this.isError=false;   
+                }, 2000);
             }, 
             complete: () => {
                 setTimeout(() => {
