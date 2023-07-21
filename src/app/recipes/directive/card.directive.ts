@@ -5,7 +5,7 @@ export class CardDirective<T>{
     constructor() { }
 
     @Input({ required: true })
-    id : number;
+    id?: number;
 
     @Input({ required: true })
      name : string;

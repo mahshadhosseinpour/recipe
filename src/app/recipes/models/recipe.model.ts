@@ -1,6 +1,7 @@
 export interface Recipe {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   imageUrl: string;
+  isSaved:boolean;
 }
