@@ -18,10 +18,15 @@ export class RecipePage implements OnInit {
         this.recipeService.getRecipes().subscribe({
             next: (res) => {
                this.foodList=res;
-               console.log("list:", this.foodList);
             },
             error:(er)=>{
             }
         })
+    }
+
+    filterItems(e:Recipe[]){
+        debugger
+        this.foodList=e;
+        console.log("this.foodList :",this.foodList);
     }
 }

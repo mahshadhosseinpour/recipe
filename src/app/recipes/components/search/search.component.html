@@ -1,10 +1,28 @@
-<!-- <div class="flex items-center justify-center h-screen"> -->
-    <div class="p-4 mx-auto ">
+ 
+    <!-- <div class="p-4 mx-auto ">
       <h1 class="mb-4 text-3xl font-bold">Get cooking today?</h1>
       <div class="flex items-center">
         <input type="text" id="searchInput" placeholder="Search ingredients and name food"
           class="px-4 py-4 border border-gray-300 rounded-md w-96 focus:outline-none focus:border-gray-400">
       </div>
       <div id="searchResults" class="mt-4"></div>
+    </div> -->
+
+    <div class="p-4 mx-auto">
+      <h1 class="mb-4 text-3xl font-bold">Get cooking today?</h1>
+      <div class="flex items-center">
+        <!-- Use formControlName to bind the searchForm to the input field -->
+        <input type="text" id="searchInput" placeholder="Search ingredients and name food"
+          class="px-4 py-4 border border-gray-300 rounded-md w-96 focus:outline-none focus:border-gray-400"
+          [formControl]="searchForm">
+      </div>
+      <div id="searchResults" class="mt-4">
+        <!-- Loop through filteredRecipes to display the results -->
+        <div *ngFor="let recipe of filteredRecipes">
+          <h2>{{ recipe.name }}</h2>
+          <p>{{ recipe.description }}</p>
+          <img [src]="recipe.imageUrl" alt="{{ recipe.name }}" width="200">
+        </div>
+      </div>
     </div>
-  <!-- </div> -->
+  
