@@ -14,22 +14,25 @@ export class RecipePage implements OnInit {
     constructor(private recipeService: ReceipeService, private router: Router) { }
 
     foodList: Recipe[];
+    isLoading: boolean = true;
 
     ngOnInit() {
         this.recipeService.getRecipes().subscribe({
             next: (res) => {
                 this.foodList = res;
-                console.log("list2222 :", this.foodList);
-                
             },
             error: (er) => {
+            }, 
+            complete: () => {
+                setTimeout(() => {
+                    this.isLoading = false;
+                }, 300);
             }
         })
     }
 
     filterItems(e: Recipe[]) {
         this.foodList = e;
-        console.log("this.foodList :", this.foodList);
     }
 
     showMyRecipes() {

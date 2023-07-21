@@ -8,11 +8,13 @@ import { SearchComponent } from 'src/app/components/search/search.component';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { RecipesRoutingModule } from './receipe.routes';
 import { MyRecipePage } from './pages/my-recipes/my-recipes.page';
+import { LoadingComponent } from 'src/app/components/loading/loading.component';
 
 
 const components:any[]=[
     SearchComponent,
-    CardComponent
+    CardComponent,
+    LoadingComponent
 ]
 
 const pages :any[]=[

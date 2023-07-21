@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
 
     searchForm: FormControl;
     filteredRecipes: Recipe[] = [];
+    isLoading: boolean = true;
 
 
     ngOnInit() {
@@ -29,7 +30,6 @@ export class SearchComponent implements OnInit {
     }
   
     filterRecipes(query: string): void {
-      console.log("query :",query);
       this.filteredRecipes = this.recipeService.recipes.filter(recipe =>
         recipe.name.toLowerCase().includes(query.toLowerCase())
       );
