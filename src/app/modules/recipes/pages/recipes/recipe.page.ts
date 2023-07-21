@@ -21,6 +21,7 @@ export class RecipePage implements OnInit {
         this.recipeService.getRecipes().subscribe({
             next: (res) => {
                 this.foodList = res;
+               
             },
             error: (er) => {
                 this.isError=true;
