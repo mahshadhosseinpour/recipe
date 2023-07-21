@@ -19,7 +19,7 @@ export class RecipePage implements OnInit {
         this.recipeService.getRecipes().subscribe({
             next: (res) => {
                 this.foodList = res;
-                console.log("list :", this.foodList);
+                console.log("list2222 :", this.foodList);
                 
             },
             error: (er) => {

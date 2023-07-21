@@ -8,11 +8,9 @@ export class LocalStorageService {
   private readonly localStorageKey = 'savedRecipes';
   private savedRecipes: Recipe[] = [];
 
-
   constructor(private recipeService: ReceipeService) {
     this.loadSavedRecipes();
   }
-
 
   public loadSavedRecipes(): void {
     const savedRecipesJson = localStorage.getItem(this.localStorageKey);
@@ -41,13 +39,8 @@ export class LocalStorageService {
     this.saveRecipesToLocalStorage();
   }
 
-
   getRecipes(): Observable<Recipe[]> {
-    const savedRecipesJson = localStorage.getItem(this.localStorageKey);
-    if (savedRecipesJson) {
-      this.savedRecipes = JSON.parse(savedRecipesJson);
-    }
-    return of(this.savedRecipes);
+    // Return a copy of savedRecipes to avoid modifying the original array
+    return of([...this.savedRecipes]);
   }
-  
 }
