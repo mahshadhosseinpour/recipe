@@ -1,0 +1,40 @@
+    <div class="flex h-40 bg-white rounded-md shadow-lg w-96">
+
+
+        <img class="w-4/12 rounded-md " src="https://picsum.photos/200" />
+
+        <div class="flex flex-col justify-between p-3">
+
+            <div class="flex flex-col">
+                <h3 class="font-bold indent-2">Pasta</h3>
+
+                <h1 class="text-xs text-zinc-600 ">recipe :</h1>
+                <p class="text-sm line-clamp-2 text-zinc-600 ">Spaghetti Aglio e Olio: Cook spaghetti al dente. In a
+                    pan, heat olive oil and
+                    sauté minced garlic and red pepper flakes until fragrant. Toss the pasta in the garlic oil,
+                    sprinkle
+                    with parsley, and serv</p>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div title="cooking time" class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="text-sm">15 min</p>
+                </div>
+
+
+                <div title="save" (click)="saveCollection()" title="save">
+                    <svg xmlns="http://www.w3.org/2000/svg" [attr.fill]="!isSave ? 'none' : 'currentColor'"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </div>
