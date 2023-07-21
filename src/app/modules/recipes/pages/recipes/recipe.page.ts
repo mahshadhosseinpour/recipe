@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReceipeService } from '../services/recipe.service';
-import { Recipe } from '../models/recipe.model';
+import { ReceipeService } from '../../services/recipe.service';
+import { Recipe } from '../../models/recipe.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +19,8 @@ export class RecipePage implements OnInit {
         this.recipeService.getRecipes().subscribe({
             next: (res) => {
                 this.foodList = res;
+                console.log("list :", this.foodList);
+                
             },
             error: (er) => {
             }
@@ -31,6 +33,6 @@ export class RecipePage implements OnInit {
     }
 
     showMyRecipes() {
-        this.router.navigate(['collection'])
+        this.router.navigate(['myrecipes'])
     }
 }

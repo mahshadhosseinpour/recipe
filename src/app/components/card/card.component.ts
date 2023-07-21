@@ -23,17 +23,15 @@ export class CardComponent extends CardDirective<any> {
     recipe: Recipe | undefined;
 
     ngOnInit() {
-        this.recipe = this.recipeService.recipes.find(recipe => recipe.id === this.id);
-        if (this.recipe) {
-            this.isSave = this.recipe.isSaved;
-        }
+       
     }
 
     saveCollection() {
         this.isSave = !this.isSave;
-        if (this.recipe) {
-            this.recipe.isSaved = this.isSave;
-            this.toggleSave(this.recipe);
+        const foundRecipe = this.recipeService.recipes.find(recipe => recipe.id === this.id);
+        if (foundRecipe) {
+          foundRecipe.isSaved = this.isSave;
+          this.toggleSave(foundRecipe);
         }
     }
 

@@ -1,8 +1,7 @@
 import { Routes } from "@angular/router";
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
-import { RecipePage } from "./modules/recipes/pages/recipe.page";
-import { CollectionPage } from "./modules/collection/pages/collection.page";
+import { RecipeModule } from "./modules/recipes/recipes.module";
 
 const routes: Routes = [
     {
@@ -12,11 +11,7 @@ const routes: Routes = [
     },
     {
         path: 'recipe',
-        component: RecipePage
-    },
-    {
-        path:'collection',
-        component:CollectionPage
+        loadChildren: () => RecipeModule
     }
 ]
 

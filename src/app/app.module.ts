@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { CollectionModule } from './modules/collection/collection.module';
 import { RecipeModule } from './modules/recipes/recipes.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { RecipeModule } from './modules/recipes/recipes.module';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    CollectionModule,
     RecipeModule,
     BrowserAnimationsModule
   ],
