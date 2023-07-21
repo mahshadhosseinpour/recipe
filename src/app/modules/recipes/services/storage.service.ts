@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 import { ReceipeService } from './recipe.service';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LocalStorageService {
   private readonly localStorageKey = 'savedRecipes';
   private savedRecipes: Recipe[] = [];
+  private savedRecipesSubject: BehaviorSubject<Recipe[]> = new BehaviorSubject<Recipe[]>([]);
 
   constructor(private recipeService: ReceipeService) {
     this.loadSavedRecipes();
@@ -21,6 +22,8 @@ export class LocalStorageService {
       const savedRecipe = this.savedRecipes.find((r) => r.id === recipe.id);
       recipe.isSaved = !!savedRecipe;
     });
+
+    this.savedRecipesSubject.next([...this.savedRecipes]);
   }
 
   private saveRecipesToLocalStorage(): void {
@@ -37,10 +40,11 @@ export class LocalStorageService {
 
     recipe.isSaved = !recipe.isSaved;
     this.saveRecipesToLocalStorage();
+    
+    this.savedRecipesSubject.next([...this.savedRecipes]);
   }
 
   getRecipes(): Observable<Recipe[]> {
-    // Return a copy of savedRecipes to avoid modifying the original array
-    return of([...this.savedRecipes]);
+    return this.savedRecipesSubject.asObservable();
   }
 }
