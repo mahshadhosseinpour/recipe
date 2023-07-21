@@ -7,8 +7,7 @@ export class ReceipeService implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        
-      }
+    }
 
     public recipes: Recipe[] = [
         {
