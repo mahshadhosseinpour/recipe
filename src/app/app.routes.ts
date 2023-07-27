@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { RecipeModule } from "./modules/recipes/recipes.module";
+import { NotFoundComponent } from "./components/404/404.component";
 
 const routes: Routes = [
     {
@@ -12,6 +13,14 @@ const routes: Routes = [
     {
         path: 'recipe',
         loadChildren: () => RecipeModule
+    },
+    {
+        path:'**',
+        redirectTo: '404'   
+    },
+    {
+        path:'404',
+        component:NotFoundComponent
     }
 ]
 

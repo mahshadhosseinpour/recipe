@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { ReceipeService } from '../../services/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 import { Router } from '@angular/router';
+
 
 @Component({
     templateUrl: './recipe.page.html',
@@ -11,7 +12,7 @@ export class RecipePage implements OnInit {
 
 
 
-    constructor(private recipeService: ReceipeService, private router: Router) { }
+    constructor(private recipeService: ReceipeService, private router: Router,@Inject('environment') public environment:any) { }
 
     foodList: Recipe[];
     isLoading: boolean = true;

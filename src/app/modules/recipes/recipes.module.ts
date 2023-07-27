@@ -10,6 +10,7 @@ import { RecipesRoutingModule } from './receipe.routes';
 import { MyRecipePage } from './pages/my-recipes/my-recipes.page';
 import { LoadingComponent } from 'src/app/components/loading/loading.component';
 import { ToastComponent } from 'src/app/components/toast/toast.component';
+import { environment } from 'src/enviroments/enviroment.cooking';
 
 
 const components:any[]=[
@@ -28,7 +29,7 @@ const pages :any[]=[
     imports: [CommonModule,ReactiveFormsModule,RecipesRoutingModule],
     exports: [],
     declarations: [...pages,...components],
-    providers: [ReceipeService],
+    providers: [ReceipeService,{ provide: 'environment', useValue: environment }],
       
 })
 export class RecipeModule { }
