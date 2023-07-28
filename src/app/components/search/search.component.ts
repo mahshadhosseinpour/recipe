@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
       this.searchForm = this.formBuilder.control('');
+      //subscribe listen to valueChanges so pass filterRecipes
       this.searchForm.valueChanges.subscribe((query: string) => {
         this.filterRecipes(query);
       });
