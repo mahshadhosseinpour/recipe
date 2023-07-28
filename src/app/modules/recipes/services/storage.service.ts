@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 import { ReceipeService } from './recipe.service';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LocalStorageService {
